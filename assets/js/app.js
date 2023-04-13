@@ -8,3 +8,7 @@ document.getElementById('login').addEventListener('click', () => {
     alert('Create Account button clicked!');
   });
   
+  document.getElementById("create-account").addEventListener("click", function() {
+    window.location.href = "create-account.html";
+  });
+  
