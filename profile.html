@@ -4,16 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <link rel="stylesheet" href="./assets/ccs/profile.css">
+    <link rel="stylesheet" href="./assets/css/profile.css">
 </head>
 <body>
+    <div id="map"></div>
+    
+    <script>
+        // Google Maps initialization function
+        function initMap() {
+            const mapOptions = {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8,
+            };
+            const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        }
+
+        // Function to handle clicks on the profile image
+        function onProfileImageClick() {
+            // Add code for handling the dropdown menu
+            // with options for dark theme, account settings, customer support, and log out
+        }
+    </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9qwKgmULiUW_jMTKTPpjPGzRaZ6rY_V0&callback=initMap"></script>
-    <!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
-<script src="./assets/js/profile.js"></script>
+    
+    <!-- Firebase v9+ libraries -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js';
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
 
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBsjXx0ax8Qh3b8_f6PmN0ARHThgXrR6dg",
+            authDomain: "usrs-99501.firebaseapp.com",
+            projectId: "usrs-99501",
+            storageBucket: "usrs-99501.appspot.com",
+            messagingSenderId: "410770603376",
+            appId: "1:410770603376:web:0b7c2fe48f76b3834923b5",
+            measurementId: "G-H970355Y3Z"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+    </script>
 </body>
 </html>
